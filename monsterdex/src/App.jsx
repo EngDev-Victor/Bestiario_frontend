@@ -1,28 +1,60 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Inicio from "./pages/Inicio";
+import Salvas from "./pages/Salvas";
+import estilo from "./styles.module.css";
 
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Criaturas from "./pages/Criaturas";
-import MeuBestiario from "./pages/MeuBestiario";
-import Detalhes from "./pages/Detalhes";
-import NotFound from "./pages/NotFound";
 
-function App() {
+// rq: componente próprio com props (quantidade)
+function Menu({ quantidade }) {
   return (
-    <BrowserRouter>
-      <Navbar />
-
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/criaturas" element={<Criaturas />} />
-          <Route path="/meu-bestiario" element={<MeuBestiario />} />
-          <Route path="/criatura/:id" element={<Detalhes />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+    <nav className={estilo.menu}>
+      <Link to="/">Buscar</Link>
+      <Link to="/salvas">Salvas ({quantidade})</Link>
+    </nav>
   );
 }
-
+// requisito: página de erro (rota 404)
+function PaginaErro() {
+  return (
+    <div>
+      <p className={estilo.numero}>404</p>
+      <h1>Página não encontrada</h1>
+      <Link to="/">Voltar para o início</Link>
+    </div>
+  );
+}
+function App() {
+  // requisito: useState, e os dados vêm do localStorage (sobrevivem ao F5)
+  const [salvas, setSalvas] = useState(() => JSON.parse(localStorage.getItem("salvas")) || []);
+  useEffect(() => {
+    localStorage.setItem("salvas", JSON.stringify(salvas));
+  }, [salvas]);
+  // requisito: criar, editar e remover
+  function salvar(skill) {
+    setSalvas([...salvas, skill]);
+  }
+  function criar(dados) {
+    setSalvas([...salvas, { id: Date.now(), estrelas: 0, ...dados }]);
+  }
+  function editar(id, dados) {
+    setSalvas(salvas.map((s) => (s.id === id ? { ...s, ...dados } : s)));
+  }
+  function apagar(id) {
+    setSalvas(salvas.filter((s) => s.id !== id));
+  }
+  return (
+    <div>
+      <Menu quantidade={salvas.length} />
+      <div className={estilo.pagina}>
+        {/* requisito: três rotas, a última é a página de erro */}
+        <Routes>
+          <Route path="/" element={<Inicio salvas={salvas} onSalvar={salvar} />} />
+          <Route path="/salvas" element={<Salvas salvas={salvas} onCriar={criar} onEditar={editar} onApagar={apagar} />} />
+          <Route path="*" element={<PaginaErro />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
 export default App;

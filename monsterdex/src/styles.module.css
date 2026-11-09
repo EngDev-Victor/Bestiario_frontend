@@ -1,0 +1,73 @@
+.pagina {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+.menu {
+  display: flex;
+  gap: 24px;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--laranja);
+}
+.menu a {
+  color: #eee;
+}
+.numero {
+  font-size: 64px;
+  color: var(--laranja);
+}
+.busca {
+  display: flex;
+  margin-bottom: 20px;
+}
+.busca input {
+  flex: 1;
+}
+.erro {
+  color: #ff5a4d;
+}
+.nova {
+  margin-bottom: 16px;
+}
+.cartao {
+  margin-bottom: 10px;
+  padding: 14px;
+  background: var(--cinza);
+  border: 1px solid var(--borda);
+}
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.titulo a {
+  color: #eee;
+}
+.estrelas {
+  color: var(--laranja);
+}
+.descricao {
+  margin: 6px 0 12px;
+  color: #aaa;
+}
+.botoes {
+  display: flex;
+  gap: 8px;
+  color: #aaa;
+}
+.form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 14px;
+  border: 1px solid var(--laranja);
+}
+.form label {
+  display: grid;
+  color: #aaa;
+}
+.cancelar {
+  background: none;
+  color: #eee;
+  border-color: var(--borda);
+}
