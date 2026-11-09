@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Cartao from "../components/Cartao/Cartao";
 import estilo from "../styles.module.css";
+
+// ============================== IMPORTE ============================================
+
 function Inicio({ salvas, onSalvar }) {
   const [busca, setBusca] = useState("");
   const [resultado, setResultado] = useState([]);

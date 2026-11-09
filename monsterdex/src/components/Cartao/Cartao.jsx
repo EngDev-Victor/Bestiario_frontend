@@ -1,7 +1,13 @@
 import estilo from "../../styles.module.css";
-// requisito: componente próprio com props (skill e as ações)
+
+// ============================== IMPORTE ============================================
+
+// rq: componente próprio com props (skill e as ações)
 function Cartao({ skill, salvo, onSalvar, onEditar, onApagar }) {
   const botaoSalvar = salvo ? <span>Já salva</span> : <button onClick={() => onSalvar(skill)}>Salvar</button>;
+// ternario
+  
+  
   return (
     <div className={estilo.cartao}>
       <div className={estilo.titulo}>

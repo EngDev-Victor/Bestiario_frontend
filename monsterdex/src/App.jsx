@@ -4,6 +4,8 @@ import Inicio from "./pages/Inicio";
 import Salvas from "./pages/Salvas";
 import estilo from "./styles.module.css";
 
+// ============================== IMPORTE ============================================
+
 
 // rq: componente próprio com props (quantidade)
 function Menu({ quantidade }) {

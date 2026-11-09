@@ -1,5 +1,8 @@
 import { useState } from "react";
 import estilo from "../../styles.module.css";
+
+// ============================== IMPORTE ============================================
+
 // requisito: componente próprio com props (inicial, textoBotao, onEnviar, onCancelar)
 // requisito: formulário controlado (value + onChange em cada input)
 function Formulario({ inicial, textoBotao, onEnviar, onCancelar }) {
