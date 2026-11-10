@@ -16,7 +16,7 @@ function Menu({ quantidade }) {
     </nav>
   );
 }
-// requisito: página de erro (rota 404)
+// rq:  da erro (rota 404)
 function PaginaErro() {
   return (
     <div>
@@ -32,7 +32,11 @@ function App() {
   useEffect(() => {
     localStorage.setItem("salvas", JSON.stringify(salvas));
   }, [salvas]);
-  // requisito: criar, editar e remover
+  // rq: criar, editar e remover
+
+  // as skills ficam aqui no App
+  //  porque a busca, a lista salva e o menu usam os mesmos dado
+  // se fosse fora cada precisaria do proprio lsrt
   function salvar(skill) {
     setSalvas([...salvas, skill]);
   }

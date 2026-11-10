@@ -26,8 +26,8 @@ function Salvas({ salvas, onCriar, onEditar, onApagar }) {
       ) : (
         <button className={estilo.nova} onClick={() => setCriando(true)}>Nova skill</button>
       )}
-      {salvas.length === 0 && <p>Você ainda não salvou nenhuma skill.</p>}
-      {/* requisito: listar com map e key, editar e remover */}
+      {salvas.length === 0 && <p>Voce ainda nao salvou nenhuma</p>}
+      {/* rq: listar com map e key, editar e remover */}
       {salvas.map((skill) =>
         skill.id === editandoId ? (
           <Formulario

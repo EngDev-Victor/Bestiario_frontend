@@ -7,11 +7,10 @@ function Cartao({ skill, salvo, onSalvar, onEditar, onApagar }) {
   const botaoSalvar = salvo ? <span>Já salva</span> : <button onClick={() => onSalvar(skill)}>Salvar</button>;
 // ternario
   
-  
   return (
     <div className={estilo.cartao}>
       <div className={estilo.titulo}>
-        <a href={skill.link || undefined} target="_blank" rel="noreferrer">{skill.nome}</a>
+        <a href={skill.link || undefined}>{skill.nome}</a>
         <span className={estilo.estrelas}>★ {skill.estrelas}</span>
       </div>
       <p className={estilo.descricao}>{skill.descricao || "Sem descrição."}</p>
@@ -24,3 +23,6 @@ function Cartao({ skill, salvo, onSalvar, onEditar, onApagar }) {
   );
 }
 export default Cartao;
+
+// lembrar, é para  mostra uma skill, e é reaproveitado na  duas telas, muda só os botões
+// botões aparecem só se a página passar a função correspondente(onSalvar, OnEditar e On Apagar//
