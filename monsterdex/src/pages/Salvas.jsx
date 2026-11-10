@@ -9,10 +9,14 @@ import estilo from "../styles.module.css";
 function Salvas({ salvas, onCriar, onEditar, onApagar }) {
   const [criando, setCriando] = useState(false);
   const [editandoId, setEditandoId] = useState(null);
+
+  //  rq: criar, com o formulário controlado 
+  //  rq: listar com map e key, editar e remover
+
+
   return (
     <div>
       <h1>Skills salvas</h1>
-      {/* requisito: criar, com o formulário controlado */}
       {criando ? (
         <Formulario
           inicial={{ nome: "", link: "", descricao: "" }}
@@ -27,7 +31,6 @@ function Salvas({ salvas, onCriar, onEditar, onApagar }) {
         <button className={estilo.nova} onClick={() => setCriando(true)}>Nova skill</button>
       )}
       {salvas.length === 0 && <p>Voce ainda nao salvou nenhuma</p>}
-      {/* rq: listar com map e key, editar e remover */}
       {salvas.map((skill) =>
         skill.id === editandoId ? (
           <Formulario

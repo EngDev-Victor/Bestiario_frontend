@@ -26,6 +26,11 @@ function PaginaErro() {
     </div>
   );
 }
+
+
+
+
+
 function App() {
   // requisito: useState, e os dados vêm do localStorage (sobrevivem ao F5)
   const [salvas, setSalvas] = useState(() => JSON.parse(localStorage.getItem("salvas")) || []);
