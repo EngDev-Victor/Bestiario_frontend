@@ -30,9 +30,8 @@ function PaginaErro() {
 
 
 
-
 function App() {
-  // requisito: useState, e os dados vêm do localStorage (sobrevivem ao F5)
+  // rq: useState, e os dados vêm do localStorage (sobreviv ao F5)
   const [salvas, setSalvas] = useState(() => JSON.parse(localStorage.getItem("salvas")) || []);
   useEffect(() => {
     localStorage.setItem("salvas", JSON.stringify(salvas));

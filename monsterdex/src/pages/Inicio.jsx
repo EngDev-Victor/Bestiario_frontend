@@ -15,7 +15,9 @@ function Inicio({ salvas, onSalvar }) {
     setCarregando(true);
     setErro("");
     try {
-      const url = "https://api.github.com/search/repositories?q=" + encodeURIComponent("claude skills " + busca) + "&sort=stars&per_page=10";
+      const url = "https://api.github.com/search/repositories?q=" + 
+      encodeURIComponent("claude skills " + busca) 
+      + "&sort=stars&per_page=10";
       // monta o endereço da busca no GitHub: "claude skills" 
       // + o que a pessoa digitou, top 10 por estrelas
       // para usar a  API do GitHub: tem o  "sort" ordena pelo valor no caso as estrelas

@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 
 
-// parte que liga as rotas ao endereco do navegador, sem essa parte aconteceria tal coisa
+// parte que liga as rotas ao endereco do navegador
 // o Routes e o Link não sabem qual é a página atual e o app dá erro ao abri
