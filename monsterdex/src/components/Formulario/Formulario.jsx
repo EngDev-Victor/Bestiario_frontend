@@ -3,8 +3,7 @@ import estilo from "../../styles.module.css";
 
 // ============================== IMPORTE ============================================
 
-// requisito: componente próprio com props (inicial, textoBotao, onEnviar, onCancelar)
-// requisito: formulário controlado (value + onChange em cada input)
+// rq: componente próprio com props (inicial, textoBotao, onEnviar, onCancelar)
 function Formulario({ inicial, textoBotao, onEnviar, onCancelar }) {
   const [nome, setNome] = useState(inicial.nome);
   const [link, setLink] = useState(inicial.link);

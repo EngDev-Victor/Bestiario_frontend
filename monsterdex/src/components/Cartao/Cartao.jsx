@@ -25,4 +25,4 @@ function Cartao({ skill, salvo, onSalvar, onEditar, onApagar }) {
 export default Cartao;
 
 // lembrar, é para  mostra uma skill, e é reaproveitado na  duas telas, muda só os botões
-// botões aparecem só se a página passar a função correspondente(onSalvar, OnEditar e On Apagar//
+// botao aparecem só se a página passar a função correspondente(onSalvar, OnEditar e On Apagar//

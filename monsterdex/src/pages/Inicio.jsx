@@ -18,10 +18,14 @@ function Inicio({ salvas, onSalvar }) {
       const url = "https://api.github.com/search/repositories?q=" + 
       encodeURIComponent("claude skills " + busca) 
       + "&sort=stars&per_page=10";
+
+
       // monta o endereço da busca no GitHub: "claude skills" 
       // + o que a pessoa digitou, top 10 por estrelas
       // para usar a  API do GitHub: tem o  "sort" ordena pelo valor no caso as estrelas
       // escolhido e "per_page" limita a quantidade de resultados
+
+
       const resposta = await fetch(url);
       const dados = await resposta.json();
       // lista criada a partir de um array de objetos
@@ -35,7 +39,7 @@ function Inicio({ salvas, onSalvar }) {
         })) // parte que vai mostrar tela 
       );
     } catch {
-      setErro("Não deu para buscar agora. Tente de novo em um minuto.");
+      setErro("Não deu para buscar. tente de novo em um minuto");
     }
     setCarregando(false);
   }
